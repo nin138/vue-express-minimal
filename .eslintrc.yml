@@ -1,0 +1,36 @@
+root: true
+extends:
+  - standard
+  - prettier
+plugins:
+- prettier
+rules:
+  generator-star-spacing: off
+  no-debugger: warn
+  quotes:
+    - error
+    - double
+  no-new: off
+  comma-dangle:
+    - error
+    - always-multiline
+  semi:
+    - error
+    - always
+  semi-spacing:
+    - error
+    - after: true
+      before: false
+  semi-style:
+    - error
+    - last
+  no-extra-semi: error
+  no-unexpected-multiline: error
+  no-unreachable: error
+
+  indent:
+    - error
+    - 2
+  prettier/prettier: error
+  no-undef: error
+  no-multi-spaces: error

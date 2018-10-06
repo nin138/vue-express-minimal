@@ -1,0 +1,6 @@
+extends:
+- plugin:vue/recommended
+plugins:
+- vue
+env:
+  browser: true
