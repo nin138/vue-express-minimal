@@ -5,6 +5,7 @@
     <nav>
       <router-link to="/">Home</router-link>
       <router-link to="/page2">page2</router-link>
+      <router-link to="/counter">counter</router-link>
     </nav>
     <router-view />
   </div>
