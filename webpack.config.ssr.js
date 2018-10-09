@@ -1,13 +1,14 @@
-const path = require("path");
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   mode: "production",
-  entry: "./src/client/index.js",
+  target: "node",
+  entry: "./src/client/entry-server.js",
   output: {
-    path: path.resolve("./static/dist"),
-    filename: "bundle.js",
+    libraryTarget: "commonjs2",
+    publicPath: "/static/",
+    filename: "ssr.js",
   },
   module: {
     rules: [
@@ -25,19 +26,11 @@ module.exports = {
       },
     ],
   },
-  devServer: {
-    contentBase: path.resolve(__dirname, "./static"),
-  },
   resolve: {
     extensions: [".js", ".vue"],
     alias: {
       vue$: "vue/dist/vue.min.js",
     },
   },
-  plugins: [
-    new VueLoaderPlugin(),
-    new MiniCssExtractPlugin({
-      filename: "style.css",
-    }),
-  ],
+  plugins: [new VueLoaderPlugin(), new MiniCssExtractPlugin({})],
 };

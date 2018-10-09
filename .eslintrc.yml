@@ -10,6 +10,7 @@ rules:
   quotes:
     - error
     - double
+    - avoidEscape: true
   no-new: off
   comma-dangle:
     - error
