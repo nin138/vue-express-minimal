@@ -11,6 +11,8 @@ const renderer = createRenderer({
 
 server.use(express.static("./static", { index: false }));
 
+server.use("/api/v1", require("./api/v1/router"));
+
 server.get("*", (req, res) => {
   console.log(req.url);
   const context = {

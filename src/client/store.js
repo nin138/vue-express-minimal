@@ -1,9 +1,11 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import axios from "axios";
 
 Vue.use(Vuex);
 const state = {
   count: 0,
+  time: "",
 };
 
 const mutations = {
@@ -12,6 +14,9 @@ const mutations = {
   },
   decrement(state) {
     state.count--;
+  },
+  setTime(state, time) {
+    state.time = time;
   },
 };
 
@@ -30,6 +35,12 @@ const actions = {
     if ((state.count + 1) % 2 === 0) {
       commit("increment");
     }
+  },
+  setTime({ commit }) {
+    return axios
+      .get("/api/v1/time")
+      .then(it => commit("setTime", it.data.time))
+      .catch(e => commit("setTime", "ERROR:: " + e));
   },
 };
 
