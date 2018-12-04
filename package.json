@@ -6,7 +6,7 @@
     "start": "node ./src/server",
     "dev": "yarn dev-client & yarn dev-server",
     "dev-client": "webpack-dev-server --open --mode development --inline --hot --localhost --config webpack.config.dev.js",
-    "dev-server": "nodemon ./src/server",
+    "dev-server": "nodemon --watch src/server ./src/server",
     "build": "webpack --mode production --config webpack.config.prod.js & webpack --mode production --config webpack.config.ssr.js  ",
     "lint": "eslint ./src",
     "prettier": "prettier --write ./src/**/*.{js,vue,ts,css}",
