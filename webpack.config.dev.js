@@ -27,6 +27,11 @@ module.exports = {
   },
   devServer: {
     contentBase: path.resolve(__dirname, "./static"),
+    proxy: {
+      "/": {
+        target: "http://localhost:8080",
+      },
+    },
   },
   resolve: {
     extensions: [".js", ".vue"],
