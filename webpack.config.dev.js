@@ -1,6 +1,5 @@
 const path = require("path");
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
-const webpack = require("webpack");
 
 module.exports = {
   entry: "./src/client/index.js",
@@ -29,7 +28,7 @@ module.exports = {
     contentBase: path.resolve(__dirname, "./static"),
     proxy: {
       "/": {
-        target: "http://localhost:8080",
+        target: "http://localhost",
       },
     },
   },

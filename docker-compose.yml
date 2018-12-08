@@ -1,0 +1,12 @@
+version: "3"
+services:
+  web:
+    build:
+      context: docker/web
+    environment:
+      NODE_ENV: development
+    volumes:
+    - ./:/app
+    ports:
+    - "80:80"
+    command: yarn start-server-dev

@@ -32,4 +32,6 @@ server.get("*", (req, res) => {
       else res.status(500).end("Internal Server Error");
     });
 });
-server.listen(8080);
+
+const PORT = process.env.NODE_ENV === "development" ? 80 : process.env.PART || 80;
+server.listen(PORT);
